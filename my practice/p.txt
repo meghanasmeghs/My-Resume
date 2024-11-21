@@ -1,0 +1,60 @@
+          </p>
+
+          <PriceDisplay amount={99} currency="₹" period="per month" />
+
+          <Button primary>Subscribe</Button>
+
+          <Button secondary>Cancel</Button>
+
+        </article>
+
+      </section>
+
+    </main>
+
+  );
+
+}
+
+
+export default JobPostPlan;
+
+    <div className="flex z-10 gap-3.5 self-start mt-9 font-semibold">
+
+      <div className="text-3xl text-zinc-800">
+
+        <span className="font-medium">{currency}</span>
+
+        {amount}
+
+      </div>
+
+      <div className="self-end mt-5 text-xs text-neutral-500">{period}</div>
+
+    </div>
+
+  );
+
+}
+
+
+export default PriceDisplay;
+
+
+  const buttonClasses = `${baseClasses} ${primary ? primaryClasses : ''} ${secondary ? secondaryClasses : ''}`;
+
+
+  return (
+
+    <button className={buttonClasses}>
+
+      {children}
+
+    </button>
+
+  );
+
+}
+
+
+export default Button;

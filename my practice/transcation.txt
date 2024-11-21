@@ -1,0 +1,116 @@
+import React from 'react';
+
+const transactions = [
+  {
+    date: "21 March 2021",
+    time: "8:45 PM",
+    id: "OP01214784",
+    amount: "₹99",
+    method: "Credit Card ****7979",
+    status: "Successful",
+  },
+  {
+    date: "20 March 2021",
+    time: "9:28 AM",
+    id: "OP01214784",
+    amount: "₹99",
+    method: "Debit Card ****5679",
+    status: "Failed",
+  },
+  {
+    date: "18 March 2021",
+    time: "8:45 PM",
+    id: "OP32201425",
+    amount: "₹99",
+    method: "PayPal @claritaj",
+    status: "Successful",
+  },
+  {
+    date: "16 March 2021",
+    time: "8:00 PM",
+    id: "OP32201443",
+    amount: "₹99",
+    method: "Bank Transfer ****6603",
+    status: "Pending",
+  },
+  {
+    date: "15 March 2021",
+    time: "8:45 PM",
+    id: "OP32201416",
+    amount: "₹99",
+    method: "Credit Card ****1253",
+    status: "Failed",
+  },
+  {
+    date: "14 March 2021",
+    time: "8:45 PM",
+    id: "OP32201448",
+    amount: "₹99",
+    method: "Debit Card ****9865",
+    status: "Successful",
+  },
+];
+
+const TransactionsAndPlans = () => {
+  return (
+
+    <div className='bg-white'>
+      <div className="min-h-screen p-4 lg:p-8 max-w-screen-xl mx-auto">
+        <div className="max-w-6xl mx-auto">
+          <h1 className="text-2xl font-bold mb-2">Transactions</h1>
+          <p className="text-gray-600 mb-6">Manage your plan and billing history here.</p>
+
+          <div className="relative bg-white p-6 rounded-lg shadow-md mb-6 max-w-md border-2 border-blue-400">
+            <div className="absolute top-2 right-2 bg-gray-200 text-gray-700 text-xs px-2 py-1 rounded-full">
+              Expires in 30 days
+            </div>
+            <h2 className="text-xl font-semibold mb-2">Job Post Plan</h2>
+            <p className="text-gray-600 mb-4">Boost Your Hiring – Post a Job Now and Keep It Visible for 30 Days!</p>
+            <div className="flex items-center justify-start gap-2 mb-4">
+              <span className="text-2xl font-bold">₹99</span>
+              <span className="text-gray-500">per month</span>
+            </div>
+            <button className="bg-blue-500 text-white px-4 py-2 rounded-lg w-full">Subscribe</button>
+          </div>
+
+          <h2 className="text-xl font-semibold mb-4">Billing history</h2>
+          <div className="overflow-x-auto">
+            <table className="min-w-full bg-white rounded-lg shadow-md">
+              <thead>
+                <tr>
+                  <th className="px-4 py-2 border-b">Date and Time</th>
+                  <th className="px-4 py-2 border-b">Transaction id</th>
+                  <th className="px-4 py-2 border-b">Amount</th>
+                  <th className="px-4 py-2 border-b">Payment Method</th>
+                  <th className="px-4 py-2 border-b">Status</th>
+                  <th className="px-4 py-2 border-b">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                {transactions.map((transaction, index) => (
+                  <tr key={index} className="text-center">
+                    <td className="px-4 py-2 border-b">
+                      <div>{transaction.date}</div>
+                      <div className="text-gray-500">{transaction.time}</div>
+                    </td>
+                    <td className="px-4 py-2 border-b">{transaction.id}</td>
+                    <td className="px-4 py-2 border-b">{transaction.amount}</td>
+                    <td className="px-4 py-2 border-b">{transaction.method}</td>
+                    <td className={`px-4 py-2 border-b ${transaction.status === 'Successful' ? 'text-green-500' : transaction.status === 'Failed' ? 'text-red-500' : 'text-yellow-500'}`}>
+                      {transaction.status}
+                    </td>
+                    <td className="px-4 py-2 border-b">
+                      <button className="bg-gray-200 text-gray-700 px-4 py-2 rounded-lg">Details</button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default TransactionsAndPlans;

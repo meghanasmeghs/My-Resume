@@ -1,0 +1,108 @@
+      <button class="bg-primary text-white text-xs md:text-base rounded-full px-3 md:px-6 py-2 ml-0 md:ml-2" data-target="#jobTypeModal">
+        <span class="hidden md:block w-full">Search</span>
+        <span class="block md:hidden"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35m1.97-7.22a7.5 7.5 0 11-15 0 7.5 7.5 0 0115 0z"></path></svg>
+        </span>
+        </button>
+        
+        
+        
+              <button
+        type="submit"
+        className="sm:flex items-center justify-center px-4 py-2 text-white bg-primary rounded-full whitespace-nowrap ml-auto sm:ml-0 mt-2 mb-2 mr-2"
+      >
+        Search
+      </button>
+      
+      
+      
+      
+      
+      const SearchBar = () => {
+  return (
+    <form className="flex items-center rounded-full overflow-hidden border border-gray-300 shadow-md bg-white max-w-[90%] sm:max-w-[700px] mx-auto">
+      {/* Input and icon hidden on mobile screens, shown only on larger screens */}
+      <div className="hidden md:flex items-center flex-1 ml-2">
+      {/* Input always visible */}
+      <div className="flex items-center flex-1 ml-2">
+        <SearchIcon className="ml-4 text-gray-500" />
+        <input
+          type="text"
+          placeholder="Search for a profession"
+          aria-label="Search for a profession"
+          className="flex-1 px-4 py-2 border-0 rounded-full outline-none"
+        />
+      </div>
+
+      {/* Search button, always visible on all screen sizes */}
+      <button
+        type="submit"
+        className="flex items-center justify-center px-4 py-2 text-white bg-primary rounded-full whitespace-nowrap ml-auto md:ml-0 mt-2 mb-2 mr-2"
+      >
+        Search
+      </button>
+      
+      
+      
+      import React from "react";
+import { SearchIcon } from "../../../../assets/icons/SvgIconsList";
+
+const SearchBar = () => {
+  return (
+    <form className="flex items-center rounded-full overflow-hidden border border-gray-300 shadow-md bg-white max-w-[90%] sm:max-w-[700px] mx-auto">
+      {/* Input and icon hidden on mobile screens, shown only on larger screens */}
+      <div className="hidden md:flex items-center flex-1 ml-2">
+        {/* Input always visible */}
+        <div className="flex items-center flex-1 ml-2">
+          <SearchIcon className="ml-4 text-gray-500" />
+          <input
+            type="text"
+            placeholder="Search for a profession"
+            aria-label="Search for a profession"
+            className="flex-1 px-4 py-2 border-0 rounded-full outline-none"
+          />
+        </div>
+
+        {/* Search button, always visible on all screen sizes */}
+        <button
+          type="submit"
+          className="flex items-center justify-center px-4 py-2 text-white bg-primary rounded-full whitespace-nowrap ml-auto md:ml-0 mt-2 mb-2 mr-2"
+        >
+          Search
+        </button>
+        </div>
+    </form>
+  );
+};
+
+export default SearchBar;
+
+
+
+
+import React from "react";
+import { SearchIcon } from "../../assets/icons/SvgIconsList";
+const SearchBar = () => {
+  return (
+    <form className="flex items-center rounded-full overflow-hidden border border-gray-300 shadow-md bg-white mx-auto max-w-full sm:max-w-[700px] w-full">
+      <div className="flex items-center flex-1">
+        {/* Search icon visible on medium screens and up */}
+        <div className="hidden md:flex items-center pl-3">
+          <SearchIcon className="text-gray-500" />
+        </div>
+        <input
+          type="text"
+          placeholder="Search"
+          aria-label="Search for a profession"
+          className="flex-1 px-4 py-2 border-0 rounded-full outline-none"
+        />
+              </div>
+      <button
+        type="submit"
+        className="px-4 py-2 text-white bg-primary rounded-full ml-2"
+      >
+        Search
+      </button>
+    </form>
+  );
+};
+export default SearchBar;

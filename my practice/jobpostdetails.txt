@@ -1,0 +1,142 @@
+import React from 'react';
+
+const JobPostDetails = () => {
+  const id = 'jobTitle';
+  const placeholder = 'Enter job title';
+
+  return (
+    <main className="px-6 py-4 bg-gray-100 min-h-screen">
+      <div className="max-w-3xl mx-auto bg-white p-6 rounded-md shadow-lg font-outfit">
+        {/* Title */}
+        <h1 className="text-2xl font-bold mb-4">Job Post Details</h1>
+
+        <form>
+          {/* Job Title and Number of Vacancies side by side */}
+          <div className="flex flex-col gap-4 md:flex-row">
+            {/* Job Title */}
+            <div className="flex-1">
+              <label htmlFor={id}>Job Title *</label>
+              <input
+                type="text"
+                id={id}
+                placeholder={placeholder}
+                className="w-full overflow-hidden px-3.5 py-2.5 text-sm leading-none bg-white rounded-md border border-gray-300 border-solid shadow-[0px_1px_2px_rgba(0,0,0,0.05)] text-zinc-400"
+              />
+            </div>
+
+            {/* Number of Vacancies */}
+            <div className="flex-1">
+              <label htmlFor="vacancies">Number of Vacancies</label>
+              <select
+                id="vacancies"
+                className="w-full overflow-hidden px-3.5 py-2.5 text-sm leading-none bg-white rounded-md border border-gray-300 border-solid shadow-[0px_1px_2px_rgba(0,0,0,0.05)] text-zinc-400"
+              >
+                <option value="">Select number of vacancies</option>
+                <option value="1">1 Vacancy</option>
+                <option value="2">2 Vacancies</option>
+                <option value="3">3 Vacancies</option>
+                <option value="4">4 Vacancies</option>
+                <option value="5">5 Vacancies</option>
+                <option value="10+">10+ Vacancies</option>
+                <option value="custom">Enter custom number</option>
+              </select>
+            </div>
+          </div>
+
+          {/* Preferred Gender and Location side by side */}
+          <div className="flex flex-col gap-4 mt-4 md:flex-row">
+            {/* Preferred Gender */}
+            <div className="flex-1">
+              <label htmlFor="gender">Preferred Gender</label>
+              <select
+                id="gender"
+                className="w-full overflow-hidden px-3.5 py-2.5 text-sm leading-none bg-white rounded-md border border-gray-300 border-solid shadow-[0px_1px_2px_rgba(0,0,0,0.05)] text-zinc-400"
+              >
+                <option value="">Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+                <option value="any">Any</option>
+              </select>
+            </div>
+
+            {/* Preferred Location */}
+            <div className="flex-1">
+              <label htmlFor="preferredLocation">Location *</label>
+              <select
+                id="preferredLocation"
+                className="w-full overflow-hidden px-3.5 py-2.5 text-sm leading-none bg-white rounded-md border border-gray-300 border-solid shadow-[0px_1px_2px_rgba(0,0,0,0.05)] text-zinc-400"
+              >
+                <option value="">Select preferred location</option>
+                <option value="New York">New York</option>
+                <option value="San Francisco">San Francisco</option>
+                <option value="Los Angeles">Los Angeles</option>
+                <option value="Chicago">Chicago</option>
+                <option value="Remote">Remote</option>
+                <option value="custom">Enter custom location</option>
+              </select>
+            </div>
+          </div>
+
+          {/* Salary Range */}
+          <div className="mt-4">
+            <label>Salary *</label>
+            <div className="flex items-center gap-4">
+              <input
+                type="text"
+                id="salaryStart"
+                placeholder="ex. 10000"
+                className="overflow-hidden grow px-3.5 py-2.5 text-sm leading-none bg-white rounded-md border border-gray-300 border-solid shadow-[0px_1px_2px_rgba(0,0,0,0.05)]"
+              />
+              <span className="self-start text-xl text-gray-500 leading-none">to</span>
+              <input
+                type="text"
+                id="salaryEnd"
+                placeholder="ex. 20000"
+                className="overflow-hidden grow px-3.5 py-2.5 text-sm leading-none bg-white rounded-md border border-gray-300 border-solid shadow-[0px_1px_2px_rgba(0,0,0,0.05)]"
+              />
+            </div>
+          </div>
+
+          {/* Job Categories */}
+          <div className="mt-4">
+            <label htmlFor="jobCategories">Job Categories</label>
+            <select
+              id="jobCategories"
+              className="w-full overflow-hidden px-3.5 py-2.5 text-sm leading-none bg-white rounded-md border border-gray-300 border-solid shadow-[0px_1px_2px_rgba(0,0,0,0.05)] text-zinc-400"
+            >
+              <option value="">Select a category</option>
+              <option value="Engineering">Engineering</option>
+              <option value="Marketing">Marketing</option>
+              <option value="Design">Design</option>
+              <option value="Sales">Sales</option>
+              <option value="Human Resources">Human Resources</option>
+              <option value="Finance">Finance</option>
+            </select>
+          </div>
+
+          {/* Job Description */}
+          <div className="mt-4">
+            <label htmlFor="jobDescription">Job Description</label>
+            <textarea
+              id="jobDescription"
+              placeholder="Mention preferred language, perk and benefits, etc for employee"
+              className="w-full overflow-hidden px-3.5 py-2.5 max-w-full text-sm leading-none bg-white rounded-md border border-gray-300 border-solid shadow-[0px_1px_2px_rgba(0,0,0,0.05)] text-zinc-400"
+            ></textarea>
+          </div>
+
+          {/* Submit Button */}
+          <button
+            type="submit"
+            className="px-16 py-2 mt-4 w-full text-base font-semibold text-center text-white bg-primary rounded-md max-w-[814px] max-md:px-5 max-md:max-w-full"
+          >
+            Post Job
+          </button>
+        </form>
+      </div>
+    </main>
+  );
+};
+
+export default JobPostDetails;
+
